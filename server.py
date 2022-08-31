@@ -1,16 +1,21 @@
 import socket
 import sys
 
-tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-address = ("localhost", 80)
-tcp_socket.bind(address)
+
+# Create a TCP/IP socket
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+address = ("127.0.0.1", 80)
+print (sys.stderr, 'starting up on %s port %s' % address)
+
+sock.bind(address)
 
 # listen on port 80
-tcp_socket.listen(1)
+sock.listen(1)
 
 while True:
     print("Waiting for connection")
-    connection, client = tcp_socket.accept()
+    connection, client = sock.accept()
 
     try:
         print("Connected to client IP: {}".format(client))
