@@ -5,7 +5,7 @@ import sys
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-address = ("127.0.0.1", 80)
+address = ("localhost", 80)
 print (sys.stderr, 'starting up on %s port %s' % address)
 
 sock.bind(address)
