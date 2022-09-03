@@ -3,6 +3,9 @@ import sys
 
 
 
+# Get the hostname
+hostname = socket.gethostname() 
+
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -11,19 +14,19 @@ address = ("localhost", 80)
 
 sock.connect(address)
 
-try:
-    # Send data
-    message = 'Hello, World'
-    byte_string = message.encode("utf-8")
+# Take input
+message = input('-> ') 
 
-    print (sys.stderr, "sending'%s'" %message)
+while message.lower().strip() != 'exit':
 
-    sock.sendall(byte_string)
-    data = sock.recv(1024)
+        sock.sendall(message.encode())
+        data = sock.recv(1024).decode()
 
-    
-    # Look for the response
-    
-finally:
-    print(sys.stderr, 'closing socket')
-    sock.close()
+        print(f'From {hostname}: ' + data)
+        
+        message = input(" -> ")
+        
+
+        print(sys.stderr, 'closing socket')
+
+sock.close()
