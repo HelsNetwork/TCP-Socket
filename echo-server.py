@@ -1,6 +1,8 @@
 import socket
 import sys
 
+# Get the hostname
+hostname = socket.gethostname()
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -11,14 +13,20 @@ print (sys.stderr, 'starting up on %s port %s' % address)
 sock.bind(address)
 
 # listen on port 80
-sock.listen(1)
+sock.listen(2)
 conn, addr = sock.accept()
 
 with conn:
-        print(f"Connected by {addr}")
+        print(f"Connected by {hostname}")
         while True:
             data = conn.recv(1024)
-            print("Received data: {}".format(data))
+            print(f"From {hostname}: " + str(data))   
+            data = input(' -> ') 
+
+            
             if not data:
                 break
-            conn.sendall(data)
+            conn.send(data.encode())  
+
+        
+        sock.close()
