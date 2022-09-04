@@ -27,6 +27,5 @@ while message.lower().strip() != 'exit':
         message = input(" -> ")
         
 
-        print(sys.stderr, 'closing socket')
 
 sock.close()
