@@ -16,10 +16,9 @@ sock.bind(address)
 sock.listen(2)
 conn, addr = sock.accept()
 
-while message.lower().strip() != 'exit':
-
-        with conn:
-                print(f"Connected by {hostname}")
+with conn:
+        print(f"Connected by {hostname}")
+        
         while True:
             data = conn.recv(1024)
             print(f"From {hostname}: " + str(data))   
