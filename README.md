@@ -20,3 +20,14 @@ On the second terminal window, run:
 python3 ./client-server.py
 ```
 
+
+
+## Video Demo
+
+https://user-images.githubusercontent.com/87879515/188309534-a2ddc4e1-c76d-4f89-855a-705ecc4f301f.mp4
+
+
+
+
+
+
