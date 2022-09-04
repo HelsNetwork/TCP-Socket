@@ -29,5 +29,4 @@ while message.lower().strip() != 'exit':
             if not data:
                 break
             conn.send(data.encode())  
-
- sock.close()
+        sock.close()
