@@ -19,7 +19,7 @@ conn, addr = sock.accept()
 while message.lower().strip() != 'exit':
 
         with conn:
-        print(f"Connected by {hostname}")
+                print(f"Connected by {hostname}")
         while True:
             data = conn.recv(1024)
             print(f"From {hostname}: " + str(data))   
