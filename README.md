@@ -1,4 +1,6 @@
 # TCP-Server
+Send and receive messages via the terminal.
+
 
 
 ## Usage
