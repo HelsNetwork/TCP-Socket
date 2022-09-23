@@ -1,5 +1,5 @@
 # TCP-Server
-Send and receive messages via the terminal.
+This is a simple chat program created with the socket module. You can use the terminal to send and receive messages.
 
 
 
